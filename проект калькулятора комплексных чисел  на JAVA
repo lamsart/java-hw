@@ -89,3 +89,16 @@ public class CalculatorView {
     }
 }
 
+
+public class CalculatorApp {
+    public static void main(String[] args) {
+        CalculatorView view = new CalculatorView();
+        ComplexNumber a = view.getInputComplexNumber();
+        ComplexNumber b = view.getInputComplexNumber();
+
+        ComplexOperation operation = new ComplexAddition();
+        CalculatorController controller = new CalculatorController(operation);
+        ComplexNumber result = controller.calculate(a, b);
+        view.printResult(result);
+    }
+}
