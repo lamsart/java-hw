@@ -69,3 +69,23 @@ public class CalculatorController {
         return result;
     }
 }
+
+
+import java.util.Scanner;
+
+public class CalculatorView {
+    private final Scanner scanner = new Scanner(System.in);
+
+    public ComplexNumber getInputComplexNumber() {
+        System.out.print("Enter real part: ");
+        double real = scanner.nextDouble();
+        System.out.print("Enter imaginary part: ");
+        double imaginary = scanner.nextDouble();
+        return new ComplexNumber(real, imaginary);
+    }
+
+    public void printResult(ComplexNumber result) {
+        System.out.println("Result: " + result);
+    }
+}
+
