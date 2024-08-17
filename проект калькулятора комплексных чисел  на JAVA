@@ -50,3 +50,22 @@ public class ComplexDivision implements ComplexOperation {
         return new ComplexNumber(real, imaginary);
     }
 }
+
+
+import java.util.logging.Logger;
+
+public class CalculatorController {
+    private static final Logger logger = Logger.getLogger(CalculatorController.class.getName());
+    private final ComplexOperation operation;
+
+    public CalculatorController(ComplexOperation operation) {
+        this.operation = operation;
+    }
+
+    public ComplexNumber calculate(ComplexNumber a, ComplexNumber b) {
+        logger.info("Starting calculation: " + a + " and " + b);
+        ComplexNumber result = operation.execute(a, b);
+        logger.info("Result: " + result);
+        return result;
+    }
+}
